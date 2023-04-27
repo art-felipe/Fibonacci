@@ -1,0 +1,34 @@
+package Main;
+
+import java.util.Scanner;
+
+public class FibonacciLinear {
+	static void fibonacci() {
+		int numeroAnterior = 0;
+		int numeroPosterior = 1;
+		String input;
+
+		System.out.println("Qual numero você gostaria da sequência fibonacci?");
+		Scanner scanner = new Scanner(System.in);
+		input = scanner.nextLine();
+		try {
+			for (int i = 1; i <= Integer.parseInt(input); ++i) {
+
+				int soma = numeroAnterior + numeroPosterior;
+				numeroAnterior = numeroPosterior;
+				numeroPosterior = soma;
+			}
+			System.out.print(numeroAnterior);
+
+		} catch (NumberFormatException e) {
+			System.out.println("Este não é um input válido");
+			return;
+		}
+
+	}
+
+	public static void main(String[] args) {
+
+		fibonacci();
+	}
+}
