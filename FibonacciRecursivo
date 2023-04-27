@@ -1,0 +1,32 @@
+package Main;
+
+import java.util.Scanner;
+
+public class FibonacciRecursivo {
+
+	static int fibonacci(int numero) {
+
+		if (numero <= 1) {
+			return numero;
+		}
+
+		return fibonacci(numero - 1) + fibonacci(numero - 2);
+	}
+
+	public static void main(String[] args) {
+
+		String input;
+
+		System.out.println("Qual numero você gostaria da sequência fibonacci?");
+		Scanner scanner = new Scanner(System.in);
+		input = scanner.nextLine();
+		try {
+			System.out.print(fibonacci(Integer.parseInt(input)));
+
+		} catch (NumberFormatException e) {
+			System.out.println("Este não é um input válido");
+			return;
+		}
+
+	}
+}
